@@ -1,0 +1,38 @@
+{
+  "extends": "tslint-config-standard",
+  "globals": {
+    "require": true
+  },
+  "jsRules": {},
+  "rules": {
+    "quotemark": [true, "single"],
+    "triple-equals": true,
+    // 必须用 === 代替 ==
+    "semicolon": [
+      true,
+      "never"
+    ],
+    // 行末分号
+    "ordered-imports": false,
+    // 引入模块文件必须按照字母顺序排列
+    "no-unused-expression": false,
+    // 未使用的表达式，开启后不能实例化vue
+    "trailing-comma": false,
+    // object等，语句后必须加逗号
+    "object-literal-sort-keys": false,
+    "space-before-function-paren": false,
+    "no-consecutive-blank-lines": false,
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "member-access": false,
+    // 组件按字母顺序排列
+    "variable-name": true,
+    // 错误变量名检查
+    "arrow-parens": false
+    // 箭头函数参数必须加括号
+  },
+  "rulesDirectory": []
+}

@@ -1,5 +1,6 @@
 'use strict'
 const utils = require('./utils')
+const merge = require('webpack-merge')
 const config = require('../config')
 const isProduction = process.env.NODE_ENV === 'production'
 const sourceMapEnabled = isProduction
@@ -7,10 +8,13 @@ const sourceMapEnabled = isProduction
   : config.dev.cssSourceMap
 
 module.exports = {
-  loaders: utils.cssLoaders({
-    sourceMap: sourceMapEnabled,
-    extract: isProduction
-  }),
+  loaders: merge(utils.cssLoaders({
+      sourceMap: sourceMapEnabled,
+      extract: isProduction
+    }), {
+      ts: ['ts-loader', 'tslint-loader']
+    }
+  ),
   cssSourceMap: sourceMapEnabled,
   cacheBusting: config.dev.cacheBusting,
   transformToRequire: {
