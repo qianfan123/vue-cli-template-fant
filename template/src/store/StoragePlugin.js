@@ -10,7 +10,7 @@ const storagePlugin = (store) => {
 
   // 从缓存中读取
   var storageState = sessionStorage.getItem(key)
-  let initState =　JSON.parse(JSON.stringify(store.state))
+  let initState =　CommonUtil.copy(store.state)
   Object.assign(initState, storageState)
   store.replaceState(initState)
 

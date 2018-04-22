@@ -68,6 +68,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
+// 测试环境下采用全部编译
+devWebpackConfig.externals = {
+}
+
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {

@@ -1,20 +1,21 @@
 import { Commit, ActionTree } from 'vuex'
+import User from 'model/user/User'
 
 // state
 export interface State {
-  defaultParam?: any // 默认界面间参数传递
+  user: Nullable<User>, // 当前用户
 }
 
 export const state: State = {
-  defaultParam: null
+  user: null,
 }
 
 /**
  * 通常不直接调用这个方法
  */
 export const mutations = {
-  defaultParam(state: State, param?: any) {
-    state.defaultParam = param
+  user(state: State, user: User) {
+    state.user = user
   },
 
   /**
@@ -23,6 +24,7 @@ export const mutations = {
    * @param {State} state
    */
   clear(state: State) {
+    state.user = null
   }
 }
 
@@ -33,8 +35,8 @@ export const getters = {
  * 修改状态只提倡用dispatch
  */
 export const actions: ActionTree<State, any> = {
-  defaultParam(context: { commit: Commit }, param?: any) {
-    context.commit('defaultParam', param)
+  user(context: { commit: Commit }, user: User) {
+    context.commit('user', user)
   },
 
   clear(context: { commit: Commit }) {

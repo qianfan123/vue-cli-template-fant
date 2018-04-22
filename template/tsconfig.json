@@ -31,6 +31,9 @@
       "pages/*": [
         "src/pages/*"
       ],
+      "mgr/*": [
+        "src/mgr/*"
+      ],
       "router/*": [
         "src/router/*"
       ],

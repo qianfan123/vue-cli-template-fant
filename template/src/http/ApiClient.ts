@@ -4,6 +4,7 @@
 import axios from 'axios'
 import store from '../store'
 import CommonUtil from 'util/CommonUtil'
+import ShortcutMgr from 'mgr/ShortcutMgr'
 
 const qs = require('qs')
 axios.defaults.paramsSerializer = params => {
@@ -18,7 +19,7 @@ export default class ApiClient {
     })
   }
 
-  static server(baseUrl?: string) {
+  static server(baseUrl: string) {
     // 可以在这里拦截
     return ApiClient.create(baseUrl)
   }
