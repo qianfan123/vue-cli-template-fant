@@ -11,6 +11,7 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 {{/e2e}}
+.cache-loader
 
 # Editor directories and files
 .idea
